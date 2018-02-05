@@ -1,0 +1,34 @@
+{
+    "name": "osflab/session",
+    "description": "OSF session manager",
+    "type": "library",
+    "homepage": "https://github.com/osflab/session",
+    "license": "AGPL-3.0-or-later",
+    "authors": [
+        {
+            "name": "Guillaume Ponçon",
+            "email": "guillaume.poncon@openstates.com"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/osflab/session/issues",
+        "source": "https://github.com/osflab/session"
+    },
+    "require": {
+        "php": "^7.1.0"
+    },
+    "suggest": {
+        "osflab/container": "For the session container"
+    },
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Osf\\Session\\": ""
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "3.0.x-dev"
+        }
+    }
+}
