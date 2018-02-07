@@ -15,7 +15,8 @@
         "source": "https://github.com/osflab/session"
     },
     "require": {
-        "php": "^7.1.0"
+        "php": "^7.1.0",
+        "osflab/exception": "~3.0.0"
     },
     "suggest": {
         "osflab/container": "For the session container"
