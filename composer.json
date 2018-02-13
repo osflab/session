@@ -29,10 +29,5 @@
         "psr-4": {
             "Osf\\Session\\": ""
         }
-    },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "3.0.x-dev"
-        }
     }
 }
