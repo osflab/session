@@ -25,6 +25,7 @@
         "osflab/container": "For the session container"
     },
     "minimum-stability": "dev",
+    "prefer-stable": "true",
     "autoload": {
         "psr-4": {
             "Osf\\Session\\": ""
