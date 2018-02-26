@@ -1,7 +1,7 @@
 {
     "name": "osflab/session",
     "description": "OSF session manager",
-    "version": "3.0.0",
+    "version": "3.0.1-dev",
     "type": "library",
     "homepage": "https://github.com/osflab/session",
     "license": "AGPL-3.0-or-later",
@@ -17,10 +17,10 @@
     },
     "require": {
         "php": "^7.1.0",
-        "osflab/exception": "~3.0.0"
+        "osflab/exception": "~3.0.1"
     },
     "provide": {
-        "osflab/device": "3.0.0"
+        "osflab/device": "3.0.1"
     },
     "suggest": {
         "osflab/container": "For the session container"
