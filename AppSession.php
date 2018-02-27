@@ -18,7 +18,7 @@ namespace Osf\Session;
  * @package osf
  * @subpackage session
  */
-class AppSession
+class AppSession implements SessionInterface
 {
     const DEFAULT_NAMESPACE = 'default';
     
@@ -37,7 +37,7 @@ class AppSession
      * Check if session started, if not start it
      * @return bool
      */
-    protected function checkStarted():bool
+    protected function checkStarted(): bool
     {
         if (!$this->started) {
             $this->started = self::sessionStart();
@@ -96,7 +96,7 @@ class AppSession
      * @param array $values
      * @return $this
      */
-    public function hydrate(array $values):self
+    public function hydrate(array $values)
     {
         foreach ($values as $key => $value) {
             $this->set($key, $value);
@@ -108,7 +108,7 @@ class AppSession
      * @param string $key
      * @return $this
      */
-    public function clean(string $key):self
+    public function clean(string $key)
     {
         if ($this->checkStarted() && isset($_SESSION[$this->namespace][$key])) {
             unset($_SESSION[$this->namespace][$key]);
@@ -119,7 +119,7 @@ class AppSession
     /**
      * @return $this
      */
-    public function cleanAll($commit = true):self
+    public function cleanAll($commit = true)
     {
         if ($this->checkStarted() && isset($_SESSION[$this->namespace])) {
             unset($_SESSION[$this->namespace]);
@@ -131,7 +131,7 @@ class AppSession
     /**
      * @return bool
      */
-    public static function sessionStart()
+    public static function sessionStart(): bool
     {
         if (session_status() === PHP_SESSION_ACTIVE) {
             return true;
@@ -147,11 +147,12 @@ class AppSession
     /**
      * session_destroy() + unset _SESSION
      */
-    public static function destroy()
+    public static function destroy(): bool
     {
         $_SESSION = null;
         if (session_status() === PHP_SESSION_ACTIVE) {
-            session_destroy();
+            return session_destroy();
         }
+        return false;
     }
 }
